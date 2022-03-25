@@ -4,9 +4,13 @@
 **Author**: Christopher Yamas
 **Version**: 1.0.0
 
-## Web Request-Response Cycle Whiteboard Draft:
+## Web Request-Response Cycle Whiteboard Drafts:
 
-![city-explorer-api WRRC](./cit-ex-api-wrrc.png)
+Lab 09:
+![lab09-city-explorer-api WRRC](./Lab-09-WRRC.png)
+
+Lab 07:
+![lab07-city-explorer-api WRRC](./cit-ex-api-wrrc.png)
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
