@@ -6,6 +6,9 @@
 
 ## Web Request-Response Cycle Whiteboard Drafts:
 
+Lab 10:
+![lab10-city-explorer-api WRRC](./lab10-cit-ex-wrrc.png)
+
 Lab 09:
 ![lab09-city-explorer-api WRRC](./Lab-09-WRRC.png)
 
