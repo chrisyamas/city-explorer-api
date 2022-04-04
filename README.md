@@ -12,6 +12,9 @@ Lab 10:
 Lab 09:
 ![lab09-city-explorer-api WRRC](./Lab-09-WRRC.png)
 
+Lab 08:
+![Lab 08 WRRC](./wrrc-lab-8.png)
+
 Lab 07:
 ![lab07-city-explorer-api WRRC](./cit-ex-api-wrrc.png)
 

@@ -4,8 +4,8 @@
 // In our servers, we have to use 'require' instead of import. Here we will list the requirements for server.
 const express = require('express');
 require('dotenv').config();
-
-let weatherData = require('./data/weather.json');
+const weatherForecast = require('./components/weather');
+const films = require('./components/movie');
 
 // We must include cors if we want to share resources over the web
 const cors = require('cors');
@@ -23,25 +23,8 @@ const PORT = process.env.PORT || 3002;
 // ROUTES
 // We will write our endpoints here
 // app.get() correlates to axios.get
-
-app.get('/weather', (req, res) => {
-  try {
-    let location = req.query.location;
-    let weatherLocat = weatherData.find(city => city.city_name === location);
-
-    let forecastArray = [];
-
-    weatherLocat.data.forEach(date => {
-      let weatherForecast = new Forecast(date);
-      forecastArray.push(weatherForecast);
-    });
-
-    res.send(forecastArray);
-
-  } catch(error) {
-    res.send(error.message);
-  }
-});
+app.get('weather', weatherForecast);
+app.get('/movies', films);
 
 app.get('*', (req, res) => {
   res.send('What you are looking for doesn\'t exist.');
@@ -50,18 +33,16 @@ app.get('*', (req, res) => {
 
 // ERROR HANDLING
 // handle errors
-app.use((error, req, res,) => {
-  res.status(500).send(error.message);
+app.use((error, req, res,next) => {
+  if(error) {
+    res.status(500).send(error.message);
+  } else {
+    next (error);
+  }
 });
 
-// CLASSES
-class Forecast {
-  constructor(forecastObject) {
-    this.date = forecastObject.valid_date;
-    this.description = forecastObject.weather.description;
-  }
-}
 
+// CLASSES
 // LISTEN
 // start the server
 // listen is an Express method that takes in a port value and a callback function
